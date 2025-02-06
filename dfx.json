@@ -1,10 +1,16 @@
 {
     "canisters": {
         "counter": {
-            "type": "rust",
-            "main": "src/lib.rs",
+            "candid": "counter.did",
             "package": "counter",
-            "candid": "counter.did"
+            "type": "rust"
         }
-    }
+    },
+    "defaults": {
+        "build": {
+            "args": "",
+            "packtool": ""
+        }
+    },
+    "version": 1
 }
