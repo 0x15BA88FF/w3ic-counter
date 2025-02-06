@@ -33,6 +33,7 @@ Before running the project, ensure you have the following installed:
 ## Running the Project
 
 ### Step 1: Clone the Repository
+
 Clone the repository and navigate to the project directory:
 ```bash
 git clone https://github.com/0x15ba88ff/w3ic-counter.git
@@ -40,24 +41,28 @@ cd w3ic-counter
 ```
 
 ### Step 2: Install Dependencies
+
 Ensure all dependencies are installed:
 ```bash
 cargo update
 ```
 
 ### Step 3: Build the Canister
+
 Use the provided `Makefile` to build the canister:
 ```bash
 make build
 ```
 
 ### Step 4: Deploy the Canister
+
 Deploy the canister to the local IC replica:
 ```bash
 make deploy
 ```
 
 ### Step 5: Interact with the Canister
+
 Use the following commands to interact with the canister:
 
 1. **Get the current counter value**:
@@ -74,3 +79,4 @@ Use the following commands to interact with the canister:
    ```bash
    dfx canister call counter inc
    ```
+
