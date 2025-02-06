@@ -1,0 +1,5 @@
+service : {
+    "increment" : () -> ();
+    "reset" : () -> ();
+    "get_counter" : () -> int;
+}
