@@ -1,6 +1,10 @@
 [package]
-name = "w3-ic-counter"
+name = "counter"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+ic-cdk = "0.8.0"
+
+[lib]
+crate-type = ["cdylib"]
