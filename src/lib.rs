@@ -16,6 +16,6 @@ fn set(n: Nat) {
 }
 
 #[ic_cdk_macros::update]
-fn inc() {
+fn increase() {
     COUNTER.with(|counter| *counter.borrow_mut() += 1_u32);
 }
