@@ -17,7 +17,7 @@ fn set(n: Nat) {
 
 #[ic_cdk_macros::update]
 fn reset() {
-    COUNTER.with(|count| *count.borrow_mut() = 0);
+    COUNTER.with(|count| *count.borrow_mut() = 0_u32.into());
 }
 
 #[ic_cdk_macros::update]
