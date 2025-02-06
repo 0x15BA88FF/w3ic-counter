@@ -1,18 +1,21 @@
-use ic_cdk::storage;
-use ic_cdk_macros::{query, update};
+use candid::types::number::Nat;
+use std::cell::RefCell;
 
-#[update]
-fn increment() {
-    let counter = storage::get_mut::<i32>().unwrap_or(0);
-    storage::set(counter + 1);
+thread_local! {
+    static COUNTER: RefCell<Nat> = RefCell::new(Nat::from(0_u32));
 }
 
-#[update]
-fn reset() {
-    storage::set(0);
+#[ic_cdk_macros::query]
+fn get() -> Nat {
+    COUNTER.with(|counter| (*counter.borrow()).clone())
 }
 
-#[query]
-fn get_counter() -> i32 {
-    storage::get().unwrap_or(0)
+#[ic_cdk_macros::update]
+fn set(n: Nat) {
+    COUNTER.with(|count| *count.borrow_mut() = n);
+}
+
+#[ic_cdk_macros::update]
+fn inc() {
+    COUNTER.with(|counter| *counter.borrow_mut() += 1_u32);
 }
